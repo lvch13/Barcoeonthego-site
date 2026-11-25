@@ -8,14 +8,14 @@
 <meta name="description" content="Barcoe On The Go LLC builds apps and games, including the Flarewell health-tracking app and BOTG Games.">
 <style>
   :root {
-    --bg: #fdf8f4;
-    --ink: #2b1626;
-    --muted: #6e5a68;
+    --bg: #f7f6f0;
+    --ink: #1f2a21;
+    --muted: #5c675d;
     --card: #ffffff;
-    --line: #efe2da;
-    --plum: #4a1d3f;
-    --plum-soft: #f3e6ef;
-    --flame: #ff7a45;
+    --line: #e2e5d8;
+    --green: #2f5d3a;
+    --sage-soft: #e4ebdd;
+    --sage: #8aa37b;
     --pink: #ff5fa2;
     --pink-soft: #ffe1ee;
     --teal-soft: #d8f5f7;
@@ -29,18 +29,18 @@
 
   header { padding: 22px 0; }
   .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-  .brand { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.45rem; text-decoration: none; color: var(--plum); }
-  .brand span { color: var(--flame); }
+  .brand { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.45rem; text-decoration: none; color: var(--green); }
+  .brand span { color: var(--sage); }
   .nav-links { display: flex; gap: 22px; font-weight: 700; }
   .nav-links a { text-decoration: none; color: var(--muted); }
-  .nav-links a:hover { color: var(--plum); }
+  .nav-links a:hover { color: var(--green); }
 
   .hero { padding: 60px 0 70px; text-align: center; }
   .eyebrow { display: inline-block; font-weight: 700; font-size: .8rem; letter-spacing: .8px; text-transform: uppercase;
-    color: var(--plum); background: var(--plum-soft); padding: 6px 14px; border-radius: 999px; margin-bottom: 20px; }
-  .hero h1 { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 700; font-size: clamp(2.2rem, 6vw, 3.7rem); line-height: 1.1; margin-bottom: 18px; color: var(--plum); }
+    color: var(--green); background: var(--sage-soft); padding: 6px 14px; border-radius: 999px; margin-bottom: 20px; }
+  .hero h1 { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 700; font-size: clamp(2.2rem, 6vw, 3.7rem); line-height: 1.1; margin-bottom: 18px; color: var(--green); }
   .hero p { font-size: 1.15rem; color: var(--muted); max-width: 580px; margin: 0 auto 30px; }
-  .btn { display: inline-block; background: var(--plum); color: #fff; text-decoration: none; font-weight: 700;
+  .btn { display: inline-block; background: var(--green); color: #fff; text-decoration: none; font-weight: 700;
     padding: 14px 28px; border-radius: 999px; transition: transform .15s; }
   .btn:hover { transform: translateY(-2px); }
   
@@ -51,17 +51,17 @@
   /* Flarewell feature */
   .feature { background: var(--card); border: 2px solid var(--line); border-radius: 28px; padding: 44px 40px;
     display: grid; grid-template-columns: 1.3fr 1fr; gap: 36px; align-items: center; }
-  .feature .label { color: var(--plum); font-weight: 700; font-size: .8rem; letter-spacing: .8px; text-transform: uppercase; }
+  .feature .label { color: var(--green); font-weight: 700; font-size: .8rem; letter-spacing: .8px; text-transform: uppercase; }
   .feature .wordmark { display: block; width: 100%; max-width: 330px; height: auto; margin: 10px 0 6px -6px; }
   .feature h2 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-  .feature .tagline { font-size: 1.2rem; font-weight: 700; color: var(--plum); margin-bottom: 12px; }
+  .feature .tagline { font-size: 1.2rem; font-weight: 700; color: var(--green); margin-bottom: 12px; }
   .feature p { color: var(--muted); margin-bottom: 14px; }
   .feature ul { list-style: none; display: grid; gap: 8px; margin-bottom: 24px; }
   .feature li { padding-left: 22px; position: relative; color: var(--ink); }
   .feature li::before { content: ""; position: absolute; left: 0; top: .55em; width: 10px; height: 10px; border-radius: 50%;
     background: linear-gradient(135deg, #ff8a5b, #e97aa6, #c48aef, #2fb0c9); }
   .feature-art { display: grid; place-items: center; border-radius: 24px; padding: 28px;
-    background: radial-gradient(circle at 40% 40%, #fff1f6 0%, #f6ecff 45%, #e8f8fa 100%); }
+    background: radial-gradient(circle at 40% 40%, #f6f8f1 0%, #e9efe2 55%, #dde7d6 100%); }
   .feature-art img { width: 100%; max-width: 260px; height: auto; }
   .platforms { font-size: .9rem; color: var(--muted); margin-top: 12px; }
 
@@ -91,10 +91,10 @@
   .about p { color: var(--muted); margin-bottom: 12px; }
   .facts { list-style: none; display: grid; gap: 12px; }
   .facts li { background: var(--card); border: 2px solid var(--line); padding: 14px 18px; border-radius: 14px; }
-  .facts strong { display: block; font-size: .76rem; text-transform: uppercase; letter-spacing: .6px; color: var(--plum); }
+  .facts strong { display: block; font-size: .76rem; text-transform: uppercase; letter-spacing: .6px; color: var(--green); }
 
   .contact { text-align: center; }
-  .contact a.email { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1.4rem; color: var(--plum); word-break: break-all; }
+  .contact a.email { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1.4rem; color: var(--green); word-break: break-all; }
 
   footer { border-top: 2px solid var(--line); padding: 28px 0 40px; margin-top: 20px; color: var(--muted); font-size: .95rem; }
   .foot { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
