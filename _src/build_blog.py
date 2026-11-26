@@ -139,7 +139,7 @@ POSTS = [
  {
   "slug": "how-we-keep-our-web-tools-free",
   "title": "How we keep our web tools free forever",
-  "desc": "No servers to pay for, no accounts, no data collection. How Barcoe On The Go builds free web tools that can stay free for good.",
+  "desc": "No servers to run, no accounts, and what you type stays on your device. How Barcoe On The Go builds web tools that can stay free for good.",
   "summary": "“Free” usually means free for now. Here's how we build our tools so they can stay free for good.",
   "body": """
 <p class="lede">When a web tool is free, it's fair to ask how long that will last. Plenty of tools start free and then add limits, trials or paywalls once people rely on them. We build ours differently, so that staying free is the easy part.</p>
@@ -155,8 +155,8 @@ POSTS = [
 <h2>2. No accounts and no database</h2>
 <p>We don't ask you to sign up, so there's no account system to build, secure or pay for. And because nothing you make is stored on our side, there's no database full of your information either.</p>
 
-<h2>3. We don't collect your data</h2>
-<p>What you type into our tools stays on your device. We don't upload it, store it or sell it. Freehold QR's generator has no analytics or tracking scripts at all. That's better for your privacy, and it's one less thing for us to run and protect.</p>
+<h2>3. What you type stays on your device</h2>
+<p>What you type into our tools stays on your device. We don't upload it, store it or sell it. That's better for your privacy, and it's one less thing for us to run and protect.</p>
 
 <h2>4. Small tools that do one job well</h2>
 <p>We'd rather build a focused tool that does one job properly than a big platform with a free tier. Small tools are quicker to build, easier to keep working and much cheaper to host.</p>
@@ -165,7 +165,7 @@ POSTS = [
 <p>We build on excellent open-source libraries, and we credit them on every tool. For example, Freehold QR uses qr-code-styling, jsQR, JSZip and jsPDF. Their authors made it possible for a small team to build something genuinely useful, and we're grateful for that.</p>
 
 <h2>So what does it actually cost?</h2>
-<p>Very little. Each tool needs a domain name, which costs a few dollars a year, and simple hosting for static files, which is often free. The biggest cost is our time, and that's covered by the rest of what we do at Barcoe On The Go, including our <a href="https://flarewell.org" rel="noopener">Flarewell</a> app and our games.</p>
+<p>Very little. Each tool needs a domain name, which costs a few dollars a year, and simple hosting for static files, which is often free. The biggest cost is our time. Our free tools are supported by ads, which pay for hosting and our time and let us keep building new tools, alongside the rest of what we do at Barcoe On The Go, including our <a href="https://flarewell.org" rel="noopener">Flarewell</a> app and our games.</p>
 
 <div class="callout">
   <p><strong>Our promise for every free tool:</strong> no sign-up, no trial clock, no features locked behind a paywall, and nothing you make held hostage. If something you make with our tools works today, it keeps working.</p>
@@ -200,7 +200,7 @@ POSTS = [
 <p>We got tired of seeing “free” QR codes stop working once a trial ran out. We wrote more about that in <a href="../why-we-built-freehold-qr/">Why we built Freehold QR</a>.</p>
 
 <h2>What's next</h2>
-<p>Freehold QR is the first of a set of free tools from Barcoe On The Go, all built the same way: free to use, no accounts and nothing collected. We'll post here each time a new one launches.</p>
+<p>Freehold QR is the first of a set of free tools from Barcoe On The Go, all built the same way: free to use, with no accounts and nothing you type uploaded. We'll post here each time a new one launches.</p>
 
 <div class="callout">
   <p>Try it out, and tell us what you think at <a href="mailto:hello@barcoeonthego.org">hello@barcoeonthego.org</a>.</p>
