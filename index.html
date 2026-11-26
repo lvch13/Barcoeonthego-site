@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- "Barcoe On The Go LLC" must match your D-U-N-S record EXACTLY (check for a comma before LLC). -->
 <title>Barcoe On The Go</title>
-<meta name="description" content="Barcoe On The Go LLC builds apps and games, including the Flarewell health-tracking app and BOTG Games.">
+<meta name="description" content="Barcoe On The Go LLC is a family-owned, LGBTQ+-owned studio building the Flarewell health app, BOTG Games and free web tools like Freehold QR.">
 <style>
   :root {
     --bg: #f7f6f0;
@@ -86,6 +86,24 @@
   .donuts .tag { background: var(--pink-soft); color: #c2306f; }
   .pearl .tag { background: var(--teal-soft); color: #0e7b86; }
 
+  /* Free tools */
+  #tools { padding-top: 10px; }
+  .tools-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+  .tools-head h2 { font-size: 1.6rem; }
+  .tools-head .pill { font-size: .74rem; font-weight: 700; text-transform: uppercase; letter-spacing: .6px;
+    color: var(--green); background: var(--sage-soft); padding: 4px 12px; border-radius: 999px; }
+  .tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .tool { background: var(--card); border: 2px solid var(--line); border-radius: var(--radius); overflow: hidden;
+    display: grid; grid-template-columns: 150px 1fr; }
+  .tool-art { background: #14213d; display: grid; place-items: center; padding: 18px; }
+  .tool-body { padding: 20px 22px; display: flex; flex-direction: column; gap: 8px; }
+  .tool h3 { font-size: 1.3rem; }
+  .tool .tool-tag { font-weight: 700; color: var(--ink); }
+  .tool p { color: var(--muted); font-size: .95rem; }
+  .tool .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tool .chips span { font-size: .74rem; font-weight: 700; color: var(--green); background: var(--sage-soft); padding: 3px 10px; border-radius: 999px; }
+  .tool a.go { font-weight: 700; color: var(--green); }
+
   /* About */
   .about { display: grid; grid-template-columns: 1.2fr 1fr; gap: 36px; align-items: start; }
   .about p { color: var(--muted); margin-bottom: 12px; }
@@ -105,6 +123,8 @@
     .feature { grid-template-columns: 1fr; padding: 32px 22px; }
     .feature-art { order: -1; }
     .about { grid-template-columns: 1fr; }
+    .tool { grid-template-columns: 1fr; }
+    .tool-art { padding: 22px; }
   }
 </style>
 </head>
@@ -116,6 +136,7 @@
     <nav class="nav-links">
       <a href="#flarewell">Flarewell</a>
       <a href="#games">Games</a>
+      <a href="#tools">Free Tools</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -126,7 +147,7 @@
   <div class="wrap hero">
     <span class="eyebrow">Barcoe On The Go LLC</span>
     <h1>Apps that make everyday<br>life a little easier.</h1>
-    <p>We're an independent app studio based in Wilmington, North Carolina, building health tools and fun mobile games for iPhone and Android.</p>
+    <p>We're an independent app studio based in Wilmington, North Carolina, building health tools, fun mobile games and free web tools anyone can use.</p>
     <a class="btn" href="#flarewell">Meet Flarewell</a>
   </div>
 
@@ -184,18 +205,48 @@
     </div>
   </section>
 
+  <section id="tools">
+    <div class="wrap">
+      <div class="tools-head">
+        <h2>Free Tools</h2>
+        <span class="pill">Free forever</span>
+      </div>
+      <p class="section-sub">Simple, genuinely free web tools anyone can use, with no sign-ups, no paywalls and no catches.</p>
+      <div class="tools">
+        <article class="tool">
+          <div class="tool-art"><svg width="104" height="104" viewBox="0 0 26 26" aria-hidden="true" shape-rendering="crispEdges">
+              <rect width="26" height="26" rx="2" fill="#fff"/>
+              <g fill="#14213d">
+                <path d="M2 2h7v7H2zM17 2h7v7h-7zM2 17h7v7H2z"/><path fill="#fff" d="M3 3h5v5H3zM18 3h5v5h-5zM3 18h5v5H3z"/>
+                <path d="M4 4h3v3H4zM19 4h3v3h-3zM4 19h3v3H4z"/>
+                <path d="M11 2h2v2h-2zM14 3h2v2h-2zM11 6h3v2h-3zM10 10h2v2h-2zM13 10h4v2h-4zM18 11h2v2h-2zM21 10h3v2h-3zM2 11h3v2H2zM6 12h3v2H6zM11 13h2v3h-2zM14 14h3v2h-3zM19 14h2v2h-2zM22 14h2v3h-2zM11 18h2v2h-2zM14 17h2v3h-2zM17 19h3v2h-3zM21 18h3v2h-3zM11 22h3v2h-3zM15 22h2v2h-2zM19 22h2v2h-2zM22 21h2v3h-2z"/>
+              </g>
+            </svg></div>
+          <div class="tool-body">
+            <h3>Freehold QR</h3>
+            <p class="tool-tag">Free QR codes you own outright.</p>
+            <p>Make QR codes for links, Wi-Fi, contact cards, email, texts, WhatsApp, maps, calendar events and more. Customise colours, styles and logos, export PNG, SVG or JPG, and scan or bulk-generate codes. Everything runs on your device, and codes never expire.</p>
+            <div class="chips"><span>No sign-up</span><span>No ads or watermarks</span><span>No scan limits</span></div>
+            <a class="go" href="https://freeholdqr.com" rel="noopener">Visit freeholdqr.com →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section id="about">
     <div class="wrap">
       <div class="about">
         <div>
           <h2 class="section-title">About us</h2>
-          <p>Barcoe On The Go LLC is a small, independent software company in Wilmington, North Carolina. We design, build and publish mobile apps for iOS and Android.</p>
-          <p>Our work spans two areas: Flarewell, our health-tracking app, and Barcoe On The Go Games (BOTG Games), our division for casual mobile games.</p>
+          <p>Barcoe On The Go LLC is a small, family-owned and LGBTQ+-owned software company in Wilmington, North Carolina. We design, build and publish mobile apps for iOS and Android, and free tools for the web.</p>
+          <p>Our work spans three areas: Flarewell, our health-tracking app; Barcoe On The Go Games (BOTG Games), our division for casual mobile games; and our Free Tools, starting with Freehold QR.</p>
         </div>
         <ul class="facts">
           <li><strong>Company</strong>Barcoe On The Go LLC</li>
+          <li><strong>Ownership</strong>Family-owned · LGBTQ+-owned</li>
           <li><strong>Based in</strong>Wilmington, North Carolina, USA</li>
-          <li><strong>Products</strong>Flarewell · BOTG Games</li>
+          <li><strong>Products</strong>Flarewell · BOTG Games · Freehold QR</li>
         </ul>
       </div>
     </div>
@@ -215,6 +266,7 @@
     <span>© 2026 Barcoe On The Go LLC. All rights reserved.</span>
     <nav>
       <a href="https://flarewell.org" rel="noopener">Flarewell</a>
+      <a href="https://freeholdqr.com" rel="noopener">Freehold QR</a>
       <a href="support.html">BOTG Games Support</a>
       <a href="privacy.html">BOTG Games Privacy Policy</a>
     </nav>
