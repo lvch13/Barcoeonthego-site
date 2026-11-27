@@ -39,6 +39,11 @@ CSS = """
   .list a.t:hover { color:var(--green); }
   .list p { color:var(--muted); }
   .list .d { font-size:.85rem; color:var(--muted); margin-top:8px; }
+  .founder-head { display:flex; align-items:center; gap:26px; margin-bottom:8px; }
+  .founder-head .meta { margin-bottom:0; }
+  .portrait { width:150px; height:150px; border-radius:50%; object-fit:cover; flex:none; border:4px solid #fff; box-shadow:0 0 0 2px var(--line); }
+  @media (max-width:600px) { .founder-head { flex-direction:column; align-items:flex-start; gap:16px; } .portrait { width:120px; height:120px; } }
+  .founder-head + .lede { margin-top:22px; }
   .sign { margin-top:30px; font-weight:700; color:var(--green); }
   .sign span { display:block; font-weight:400; color:var(--muted); font-size:.95rem; }
   .promise { background:var(--green); color:#fff; border-radius:18px; padding:22px 24px; margin:26px 0; }
@@ -251,8 +256,13 @@ open(f"{OUT}/blog/index.html","w").write(page("Blog · Barcoe On The Go","Notes 
 # about page
 ABOUT = """<article class="post">
   <p class="crumb"><a href="../">Our Story</a></p>
-  <h1>Hi, I'm Laura.</h1>
-  <p class="meta">Founder of Barcoe On The Go, a small family-owned and LGBTQ+-owned company in Wilmington, North Carolina.</p>
+  <div class="founder-head">
+    <img class="portrait" src="laura.webp" alt="Laura, founder of Barcoe On The Go" width="480" height="480">
+    <div>
+      <h1>Hi, I'm Laura.</h1>
+      <p class="meta">Founder of Barcoe On The Go, a small family-owned and LGBTQ+-owned company in Wilmington, North Carolina.</p>
+    </div>
+  </div>
 
   <p class="lede">I build apps, games and web tools that make life a little easier and a lot more affordable. Here's why.</p>
 
