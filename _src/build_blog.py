@@ -76,7 +76,7 @@ def page(title, desc, path, body, ld=None, depth=1):
       <a href="{up}#flarewell">Flarewell</a>
       <a href="{up}#games">Games</a>
       <a href="{up}#tools">Free Tools</a>
-      <a href="{up}about/" {'aria-current="page"' if path=="/about/" else ""}>Our Story</a>
+      <a href="{up}about/" {'aria-current="page"' if path.startswith("/about/") else ""}>Our Story</a>
       <a href="{up}blog/" {'aria-current="page"' if path=="/blog/" else ""}>Blog</a>
       <a href="{up}#contact">Contact</a>
     </nav>
@@ -250,6 +250,7 @@ open(f"{OUT}/blog/index.html","w").write(page("Blog · Barcoe On The Go","Notes 
 
 # about page
 ABOUT = """<article class="post">
+  <p class="crumb"><a href="../">Our Story</a></p>
   <h1>Hi, I'm Laura.</h1>
   <p class="meta">Founder of Barcoe On The Go, a small family-owned and LGBTQ+-owned company in Wilmington, North Carolina.</p>
 
@@ -283,19 +284,64 @@ ABOUT = """<article class="post">
     <h2>See what I'm building</h2>
     <ul>
       <li><a href="https://flarewell.org" rel="noopener">Flarewell</a>, our flare and symptom tracker</li>
-      <li><a href="../#games">BOTG Games</a>, our mobile games</li>
-      <li><a href="../#tools">Free Tools</a>, starting with Freehold QR</li>
-      <li><a href="../blog/">The blog</a></li>
+      <li><a href="../../#games">BOTG Games</a>, our mobile games</li>
+      <li><a href="../../#tools">Free Tools</a>, starting with Freehold QR</li>
+      <li><a href="../">The story of Barcoe On The Go</a></li>
+      <li><a href="../../blog/">The blog</a></li>
     </ul>
   </div>
 </article>"""
-os.makedirs(f"{OUT}/about",exist_ok=True)
-open(f"{OUT}/about/index.html","w").write(page("Our Story · Barcoe On The Go",
+os.makedirs(f"{OUT}/about/laura",exist_ok=True)
+open(f"{OUT}/about/laura/index.html","w").write(page("Meet Laura · Barcoe On The Go",
   "Meet Laura, founder of Barcoe On The Go: why she built Flarewell and why she makes affordable tools without sign-ups or data selling.",
-  "/about/",ABOUT,{"@context":"https://schema.org","@type":"AboutPage","name":"Our Story","url":SITE+"/about/","publisher":org},depth=1))
+  "/about/laura/",ABOUT,{"@context":"https://schema.org","@type":"ProfilePage","name":"Meet Laura","url":SITE+"/about/laura/",
+  "mainEntity":{"@type":"Person","name":"Laura","jobTitle":"Founder","worksFor":org}},depth=2))
+
+COMPANY = """<article class="post">
+  <h1>What is Barcoe On The Go?</h1>
+  <p class="meta">A small family-run, LGBTQ+-owned company building useful, affordable apps, games and web tools.</p>
+
+  <p class="lede">Barcoe On The Go is the home for all of my passion projects. Here's where the name comes from, who's behind it, and where we hope it's going.</p>
+
+  <h2>The name</h2>
+  <p><strong>Barcoe</strong> represents my family name. <strong>On The Go</strong> represents me and my constant desire to keep learning, helping others and building things. I'm always on the go.</p>
+
+  <h2>Why it exists</h2>
+  <p>I created Barcoe On The Go as the company behind all of my passion projects, starting with <a href="https://flarewell.org" rel="noopener">Flarewell</a>, along with our <a href="../#games">BOTG Games</a> and <a href="../#tools">free web tools</a>. I have many more ideas in the works. Some of them will take a little more time to build, but I promise they'll be useful.</p>
+
+  <h2>A family team</h2>
+  <p>I build a lot of these apps with my brother. We brainstorm ideas together, and he keeps me from running away with my thoughts. We make a good team and balance each other out, so I guess you could say we're a well-oiled, family-run business.</p>
+
+  <h2>Where we're from</h2>
+  <p>Barcoe On The Go is based in Wilmington, North Carolina, because that's where I live right now. I'm actually a British expat, born and raised in Gloucester, England. Barcoe On The Go is also proudly LGBTQ+-owned.</p>
+
+  <div class="promise">
+    <h2>Built for community</h2>
+    <p>I'm all about community, and I want to build things that help mine in any way I can. One day, I hope Barcoe On The Go:</p>
+    <ul>
+      <li>offers jobs to local people</li>
+      <li>is known for helping others</li>
+      <li>funds community projects</li>
+      <li>supports people who are oppressed</li>
+      <li>inspires others to do the same</li>
+    </ul>
+  </div>
+
+  <p>We have a road ahead of us before we get there, and with your help, I'd love to make Barcoe On The Go successful in all of it. Using our tools, sharing them with someone who needs them, and sending us your ideas all help more than you'd think.</p>
+
+  <div class="callout">
+    <p><strong>Want to know more about why I build what I build?</strong> Read my founder story, including why Flarewell matters so much to me and my promise to you.</p>
+    <a class="btn" href="laura/">Meet Laura</a>
+  </div>
+
+  <p>Ideas, feedback or just want to say hello? Email <a href="mailto:hello@barcoeonthego.org">hello@barcoeonthego.org</a>.</p>
+</article>"""
+open(f"{OUT}/about/index.html","w").write(page("Our Story · Barcoe On The Go",
+  "What is Barcoe On The Go? A small family-run, LGBTQ+-owned company founded by a British expat in Wilmington, NC, building useful, affordable apps, games and free web tools.",
+  "/about/",COMPANY,{"@context":"https://schema.org","@type":"AboutPage","name":"Our Story","url":SITE+"/about/","publisher":org},depth=1))
 
 # sitemap
-urls=["/","/about/","/blog/"]+[f"/blog/{p['slug']}/" for p in POSTS]+["/support.html","/privacy.html"]
+urls=["/","/about/","/about/laura/","/blog/"]+[f"/blog/{p['slug']}/" for p in POSTS]+["/support.html","/privacy.html"]
 sm='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+"".join(f"  <url><loc>{SITE}{u}</loc><lastmod>{DATE}</lastmod></url>\n" for u in urls)+"</urlset>\n"
 open(f"{OUT}/sitemap.xml","w").write(sm)
 print("ok", urls)
