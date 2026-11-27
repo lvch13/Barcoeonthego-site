@@ -63,6 +63,13 @@ def page(title, desc, path, body, ld=None, depth=1):
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<!-- Google tag (Google Tag Manager) -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PM876N64"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){{dataLayer.push(arguments);}}
+  gtag('js', new Date());
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(title)}</title>
 <link rel="canonical" href="{SITE}{path}">
