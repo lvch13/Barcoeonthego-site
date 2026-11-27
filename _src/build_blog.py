@@ -261,7 +261,7 @@ ABOUT = """<article class="post">
     <img class="portrait" src="laura.webp" alt="Laura, founder of Barcoe On The Go" width="480" height="480">
     <div>
       <h1>Hi, I'm Laura.</h1>
-      <p class="meta">Founder of Barcoe On The Go, a small family-owned and LGBTQ+-owned company in Wilmington, North Carolina.</p>
+      <p class="meta">Founder of Barcoe On The Go, a small family-owned, woman-owned and LGBTQ+-owned company in Wilmington, North Carolina.</p>
     </div>
   </div>
 
@@ -310,21 +310,25 @@ open(f"{OUT}/about/laura/index.html","w").write(page("Meet Laura · Barcoe On Th
 
 COMPANY = """<article class="post">
   <h1>What is Barcoe On The Go?</h1>
-  <p class="meta">A small family-run, LGBTQ+-owned company building useful, affordable apps, games and web tools.</p>
+  <p class="meta">A small family-run, woman-owned and LGBTQ+-owned company building useful, affordable apps, games and web tools.</p>
 
   <p class="lede">Barcoe On The Go is the home for all of my passion projects. Here's where the name comes from, who's behind it, and where we hope it's going.</p>
+
+  <h2>About us</h2>
+  <p>Barcoe On The Go LLC is a small, family-owned, woman-owned and LGBTQ+-owned software company in Wilmington, North Carolina. We design, build and publish mobile apps for iOS and Android, and free tools for the web.</p>
+  <p>Our work spans three areas: <a href="https://flarewell.org" rel="noopener">Flarewell</a>, our health-tracking app; Barcoe On The Go Games (<a href="../#games">BOTG Games</a>), our division for casual mobile games; and our <a href="../#tools">Free Tools</a>, including Freehold QR and Penny Passport.</p>
 
   <h2>The name</h2>
   <p><strong>Barcoe</strong> represents my family name. <strong>On The Go</strong> represents me and my constant desire to keep learning, helping others and building things. I'm always on the go.</p>
 
   <h2>Why it exists</h2>
-  <p>I created Barcoe On The Go as the company behind all of my passion projects, starting with <a href="https://flarewell.org" rel="noopener">Flarewell</a>, along with our <a href="../#games">BOTG Games</a> and <a href="../#tools">free web tools</a>. I have many more ideas in the works. Some of them will take a little more time to build, but I promise they'll be useful.</p>
+  <p>I created Barcoe On The Go as the company behind all of my passion projects, starting with Flarewell. I have many more ideas in the works. Some of them will take a little more time to build, but I promise they'll be useful.</p>
 
   <h2>A family team</h2>
   <p>I build a lot of these apps with my brother. We brainstorm ideas together, and he keeps me from running away with my thoughts. We make a good team and balance each other out, so I guess you could say we're a well-oiled, family-run business.</p>
 
   <h2>Where we're from</h2>
-  <p>Barcoe On The Go is based in Wilmington, North Carolina, because that's where I live right now. I'm actually a British expat, born and raised in Gloucester, England. Barcoe On The Go is also proudly LGBTQ+-owned.</p>
+  <p>Barcoe On The Go is based in Wilmington, North Carolina, because that's where I live right now. I'm actually a British expat, born and raised in Gloucester, England. Barcoe On The Go is also proudly woman-owned and LGBTQ+-owned.</p>
 
   <div class="promise">
     <h2>Built for community</h2>
@@ -348,7 +352,7 @@ COMPANY = """<article class="post">
   <p>Ideas, feedback or just want to say hello? Email <a href="mailto:hello@barcoeonthego.org">hello@barcoeonthego.org</a>.</p>
 </article>"""
 open(f"{OUT}/about/index.html","w").write(page("Our Story · Barcoe On The Go",
-  "What is Barcoe On The Go? A small family-run, LGBTQ+-owned company founded by a British expat in Wilmington, NC, building useful, affordable apps, games and free web tools.",
+  "What is Barcoe On The Go? A small family-run, woman-owned and LGBTQ+-owned company founded by a British expat in Wilmington, NC, building useful, affordable apps, games and free web tools.",
   "/about/",COMPANY,{"@context":"https://schema.org","@type":"AboutPage","name":"Our Story","url":SITE+"/about/","publisher":org},depth=1))
 
 # sitemap

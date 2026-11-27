@@ -6,7 +6,7 @@
 <!-- "Barcoe On The Go LLC" must match your D-U-N-S record EXACTLY (check for a comma before LLC). -->
 <title>Barcoe On The Go</title>
 <link rel="canonical" href="https://barcoeonthego.org/">
-<meta name="description" content="Barcoe On The Go LLC is a family-owned, LGBTQ+-owned studio building the Flarewell health app, BOTG Games and free web tools like Freehold QR.">
+<meta name="description" content="Barcoe On The Go LLC is a family-owned, woman-owned and LGBTQ+-owned studio building the Flarewell health app, BOTG Games and free web tools like Freehold QR and Penny Passport.">
 <style>
   :root {
     --bg: #f7f6f0;
@@ -144,10 +144,14 @@
   .pp-btn:hover { background: var(--pp-wine-2); }
 
   /* About */
-  .about { display: grid; grid-template-columns: 1.2fr 1fr; gap: 36px; align-items: start; }
+  .about { display: grid; grid-template-columns: 1fr; gap: 18px; }
   .about p { color: var(--muted); margin-bottom: 12px; }
-  .facts { list-style: none; display: grid; gap: 12px; }
+  .facts { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
   .facts li { background: var(--card); border: 2px solid var(--line); padding: 14px 18px; border-radius: 14px; }
+  .facts li.story { background: var(--green); border-color: var(--green); padding: 0; }
+  .facts li.story a { display: flex; flex-direction: column; justify-content: center; height: 100%; padding: 14px 18px; color: #fff; text-decoration: none; font-weight: 700; font-size: 1.05rem; line-height: 1.3; }
+  .facts li.story a span { display: block; font-size: .76rem; text-transform: uppercase; letter-spacing: .6px; color: #cfe0c6; font-weight: 700; margin-bottom: 2px; }
+  .facts li.story a:hover { background: #274f31; border-radius: 12px; }
   .facts strong { display: block; font-size: .76rem; text-transform: uppercase; letter-spacing: .6px; color: var(--green); }
 
   .contact { text-align: center; }
@@ -276,19 +280,14 @@
   <section id="about">
     <div class="wrap">
       <div class="about">
-        <div>
-          <h2 class="section-title">About us</h2>
-          <p>Barcoe On The Go LLC is a small, family-owned and LGBTQ+-owned software company in Wilmington, North Carolina. We design, build and publish mobile apps for iOS and Android, and free tools for the web.</p>
-          <p>Our work spans three areas: Flarewell, our health-tracking app; Barcoe On The Go Games (BOTG Games), our division for casual mobile games; and our Free Tools, including Freehold QR and Penny Passport.</p>
-          <p><a href="about/" style="color:var(--green);font-weight:700">Read the story of Barcoe On The Go →</a></p>
-        </div>
         <ul class="facts">
           <li><strong>Company</strong>Barcoe On The Go LLC</li>
-          <li><strong>Ownership</strong>Family-owned · LGBTQ+-owned</li>
+          <li><strong>Ownership</strong>Family-owned · Woman-owned · LGBTQ+-owned</li>
           <li><strong>Based in</strong>Wilmington, North Carolina, USA</li>
           <li><strong>Products</strong>Flarewell · BOTG Games · Freehold QR · Penny Passport</li>
+          <li class="story"><a href="about/"><span>Our story</span>What is Barcoe On The Go? →</a></li>
         </ul>
-        <div class="founder">
+        <div class="founder" style="margin-top:0">
           <blockquote>“I don't want to gatekeep, and I don't want to sell your data. I just want to offer tools that don't need sign-ups, data fishing or hoops to jump through.”</blockquote>
           <cite>Laura, founder</cite>
           <a href="about/laura/">Read why I build what I build →</a>
