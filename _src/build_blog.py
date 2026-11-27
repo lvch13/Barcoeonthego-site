@@ -39,6 +39,12 @@ CSS = """
   .list a.t:hover { color:var(--green); }
   .list p { color:var(--muted); }
   .list .d { font-size:.85rem; color:var(--muted); margin-top:8px; }
+  .sign { margin-top:30px; font-weight:700; color:var(--green); }
+  .sign span { display:block; font-weight:400; color:var(--muted); font-size:.95rem; }
+  .promise { background:var(--green); color:#fff; border-radius:18px; padding:22px 24px; margin:26px 0; }
+  .promise h2 { color:#fff; margin-top:0; }
+  .promise p, .promise li { color:#e9f0e4; }
+  .promise ul { margin-bottom:0; }
   footer { border-top:2px solid var(--line); padding:28px 0 40px; color:var(--muted); font-size:.95rem; }
   .foot { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
   .foot nav { display:flex; gap:18px; flex-wrap:wrap; }
@@ -70,6 +76,7 @@ def page(title, desc, path, body, ld=None, depth=1):
       <a href="{up}#flarewell">Flarewell</a>
       <a href="{up}#games">Games</a>
       <a href="{up}#tools">Free Tools</a>
+      <a href="{up}about/" {'aria-current="page"' if path=="/about/" else ""}>Our Story</a>
       <a href="{up}blog/" {'aria-current="page"' if path=="/blog/" else ""}>Blog</a>
       <a href="{up}#contact">Contact</a>
     </nav>
@@ -241,8 +248,54 @@ os.makedirs(f"{OUT}/blog",exist_ok=True)
 open(f"{OUT}/blog/index.html","w").write(page("Blog · Barcoe On The Go","Notes from Barcoe On The Go on building free web tools, apps and games.","/blog/",idx,
   {"@context":"https://schema.org","@type":"Blog","name":"Barcoe On The Go Blog","url":SITE+"/blog/","publisher":org},depth=1))
 
+# about page
+ABOUT = """<article class="post">
+  <h1>Hi, I'm Laura.</h1>
+  <p class="meta">Founder of Barcoe On The Go, a small family-owned and LGBTQ+-owned company in Wilmington, North Carolina.</p>
+
+  <p class="lede">I build apps, games and web tools that make life a little easier and a lot more affordable. Here's why.</p>
+
+  <h2>Why I built Flarewell</h2>
+  <p>I know so many people living with autoimmune diseases and inflammation. So many symptoms overlap that it's incredibly hard to pin down triggers and causes. Flarewell is designed to turn what you track into clear information your doctor can review, so together you can spot patterns and possible triggers.</p>
+  <p>It's personal for me, too. I live with autoimmune issues and inflammation myself. I know what the brain fog and fatigue feel like, and how hard it can be to remember appointments and medication. I also wanted to track my fluids and fitness without juggling a handful of different apps. So I made Flarewell an all-in-one, comprehensive tracker, and I plan to keep making it better over time.</p>
+  <p>Flarewell is my biggest project to date, and it's the only app I make with a premium tier, which helps cover its running costs.</p>
+
+  <h2>What I believe</h2>
+  <p>My goal is to make the most affordable, genuinely useful tools I can. I don't want to gatekeep. I don't want to store and sell your data; there's enough of that in the world already.</p>
+  <p>Wherever I can, I want to offer tools that don't need sign-ups, data fishing or hoops to jump through. To fund my builds and keep everything free, some of our products are supported by ads.</p>
+  <p>I don't know about you, but I get enough spam emails as it is, and I've lost far too much time signing up for tools only to hit a paywall afterward. Slowly but surely, I hope we can replace the tools that make you sign up and then sell your data for a quick buck.</p>
+
+  <div class="promise">
+    <h2>My promise to you</h2>
+    <ul>
+      <li>I'll never make you sign up for a tool only to hit a paywall.</li>
+      <li>I'll never sell your data.</li>
+      <li>If something I build needs an account to work, like Flarewell, which saves your health history so you can come back to it, I'll tell you why.</li>
+    </ul>
+  </div>
+
+  <h2>Your ideas are welcome</h2>
+  <p>I'm always open to feedback and ideas from the community. If there's a tool you wish existed without the sign-up and the catch, or something I've made could work better, I'd love to hear from you at <a href="mailto:hello@barcoeonthego.org">hello@barcoeonthego.org</a>.</p>
+
+  <p class="sign">Laura<span>Founder, Barcoe On The Go</span></p>
+
+  <div class="more">
+    <h2>See what I'm building</h2>
+    <ul>
+      <li><a href="https://flarewell.org" rel="noopener">Flarewell</a>, our flare and symptom tracker</li>
+      <li><a href="../#games">BOTG Games</a>, our mobile games</li>
+      <li><a href="../#tools">Free Tools</a>, starting with Freehold QR</li>
+      <li><a href="../blog/">The blog</a></li>
+    </ul>
+  </div>
+</article>"""
+os.makedirs(f"{OUT}/about",exist_ok=True)
+open(f"{OUT}/about/index.html","w").write(page("Our Story · Barcoe On The Go",
+  "Meet Laura, founder of Barcoe On The Go: why she built Flarewell and why she makes affordable tools without sign-ups or data selling.",
+  "/about/",ABOUT,{"@context":"https://schema.org","@type":"AboutPage","name":"Our Story","url":SITE+"/about/","publisher":org},depth=1))
+
 # sitemap
-urls=["/","/blog/"]+[f"/blog/{p['slug']}/" for p in POSTS]+["/support.html","/privacy.html"]
+urls=["/","/about/","/blog/"]+[f"/blog/{p['slug']}/" for p in POSTS]+["/support.html","/privacy.html"]
 sm='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+"".join(f"  <url><loc>{SITE}{u}</loc><lastmod>{DATE}</lastmod></url>\n" for u in urls)+"</urlset>\n"
 open(f"{OUT}/sitemap.xml","w").write(sm)
 print("ok", urls)
