@@ -96,6 +96,7 @@ def page(title, desc, path, body, ld=None, depth=1):
     <nav>
       <a href="https://flarewell.org" rel="noopener">Flarewell</a>
       <a href="https://freeholdqr.com" rel="noopener">Freehold QR</a>
+      <a href="https://pennypassport.org" rel="noopener">Penny Passport</a>
       <a href="{up}support.html">BOTG Games Support</a>
       <a href="{up}privacy.html">BOTG Games Privacy Policy</a>
     </nav>
@@ -295,7 +296,7 @@ ABOUT = """<article class="post">
     <ul>
       <li><a href="https://flarewell.org" rel="noopener">Flarewell</a>, our flare and symptom tracker</li>
       <li><a href="../../#games">BOTG Games</a>, our mobile games</li>
-      <li><a href="../../#tools">Free Tools</a>, starting with Freehold QR</li>
+      <li><a href="../../#tools">Free Tools</a>, including Freehold QR and Penny Passport</li>
       <li><a href="../">The story of Barcoe On The Go</a></li>
       <li><a href="../../blog/">The blog</a></li>
     </ul>

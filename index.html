@@ -124,6 +124,25 @@
   .founder cite { font-style: normal; color: #d3e0cc; display: block; margin-bottom: 14px; }
   .founder a { color: #fff; font-weight: 700; }
 
+  /* Penny Passport card: uses pennypassport.org's own styling */
+  .pp { --pp-wine: #6b1f2e; --pp-wine-2: #85293b; --pp-gold: #d9b98a; --pp-ink: #2b1d1f; --pp-muted: #6f5d58; --pp-line: #e9dccb; --pp-bg: #fdfaf4;
+    background: #fff; color: var(--pp-ink); border: 1px solid var(--pp-line); border-radius: 14px; overflow: hidden;
+    display: flex; flex-direction: column; font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  .pp-art { background: var(--pp-bg); border-top: 3px solid var(--pp-wine); display: grid; place-items: center; height: 128px; overflow: hidden; }
+  .pp-art img { height: 118px; width: auto; }
+  .pp-body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .pp-brand { display: flex; align-items: center; gap: 8px; font-size: 19px; line-height: 1; letter-spacing: .01em; }
+  .pp-brand svg { width: 26px; height: 26px; }
+  .pp-brand strong { color: var(--pp-wine-2); }
+  .pp p { color: var(--pp-muted); margin: 0; font-size: 14.5px; }
+  .pp-promises { display: flex; flex-wrap: wrap; gap: 4px 12px; margin: 0; padding: 0; list-style: none; font-size: 13px; }
+  .pp-promises li { display: flex; align-items: center; gap: 5px; }
+  .pp-promises li::before { content: ""; width: 14px; height: 14px; flex: none; border-radius: 50%;
+    background: var(--pp-wine) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.3l2.2 2.2 4.8-5' fill='none' stroke='%23f1e4cc' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat; }
+  .pp-btn { margin-top: auto; align-self: flex-start; font-weight: 600; font-size: 14px; line-height: 1; border-radius: 10px; padding: 10px 16px;
+    background: var(--pp-wine); color: #fff; text-decoration: none; }
+  .pp-btn:hover { background: var(--pp-wine-2); }
+
   /* About */
   .about { display: grid; grid-template-columns: 1.2fr 1fr; gap: 36px; align-items: start; }
   .about p { color: var(--muted); margin-bottom: 12px; }
@@ -240,6 +259,16 @@
             <a class="fq-btn" href="https://freeholdqr.com" rel="noopener">Make a QR code</a>
           </div>
         </article>
+        <article class="pp">
+          <div class="pp-art"><img src="data:image/webp;base64,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" alt="A 4×6 print sheet with six passport photos" width="265" height="360"></div>
+          <div class="pp-body">
+            <div class="pp-brand"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#6b1f2e"/><rect x="14" y="10" width="36" height="44" rx="4" fill="none" stroke="#f1e4cc" stroke-width="3"/><circle cx="32" cy="27" r="7" fill="#f1e4cc"/><path d="M20 46c2-7 7-10 12-10s10 3 12 10" fill="#f1e4cc"/></svg>
+<span>Penny <strong>Passport</strong></span></div>
+            <p>Free US passport photos you print for pennies. Get a 2×2 photo and six copies on one 4×6 sheet.</p>
+            <ul class="pp-promises"><li>No sign-up</li><li>No uploads</li><li>Print at Walmart</li></ul>
+            <a class="pp-btn" href="https://pennypassport.org" rel="noopener">Make a passport photo</a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -250,14 +279,14 @@
         <div>
           <h2 class="section-title">About us</h2>
           <p>Barcoe On The Go LLC is a small, family-owned and LGBTQ+-owned software company in Wilmington, North Carolina. We design, build and publish mobile apps for iOS and Android, and free tools for the web.</p>
-          <p>Our work spans three areas: Flarewell, our health-tracking app; Barcoe On The Go Games (BOTG Games), our division for casual mobile games; and our Free Tools, starting with Freehold QR.</p>
+          <p>Our work spans three areas: Flarewell, our health-tracking app; Barcoe On The Go Games (BOTG Games), our division for casual mobile games; and our Free Tools, including Freehold QR and Penny Passport.</p>
           <p><a href="about/" style="color:var(--green);font-weight:700">Read the story of Barcoe On The Go →</a></p>
         </div>
         <ul class="facts">
           <li><strong>Company</strong>Barcoe On The Go LLC</li>
           <li><strong>Ownership</strong>Family-owned · LGBTQ+-owned</li>
           <li><strong>Based in</strong>Wilmington, North Carolina, USA</li>
-          <li><strong>Products</strong>Flarewell · BOTG Games · Freehold QR</li>
+          <li><strong>Products</strong>Flarewell · BOTG Games · Freehold QR · Penny Passport</li>
         </ul>
         <div class="founder">
           <blockquote>“I don't want to gatekeep, and I don't want to sell your data. I just want to offer tools that don't need sign-ups, data fishing or hoops to jump through.”</blockquote>
@@ -283,6 +312,7 @@
     <nav>
       <a href="https://flarewell.org" rel="noopener">Flarewell</a>
       <a href="https://freeholdqr.com" rel="noopener">Freehold QR</a>
+      <a href="https://pennypassport.org" rel="noopener">Penny Passport</a>
       <a href="about/">Our Story</a>
       <a href="blog/">Blog</a>
       <a href="support.html">BOTG Games Support</a>
